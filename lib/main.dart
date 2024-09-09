@@ -1,9 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kemo_todo_app_2/UI/Screen/Home/home.dart';
-import 'package:kemo_todo_app_2/UI/Utils/app_theme.dart';
+import 'package:kemo_todo_app_2/Screen/Home/home.dart';
+import 'package:kemo_todo_app_2/Screen/Edit/edit_screen.dart';
+import 'package:kemo_todo_app_2/Screen/splash/splash.dart';
 
-void main() 
+import 'Firebase/firebase_options.dart';
+
+void main() async 
 {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp
+  (
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
@@ -15,13 +25,15 @@ class MyApp extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return MaterialApp(
-      theme: App_Theme.light,
-      darkTheme: App_Theme.Dark,
-      routes: {
-        Home.route_named: (_) => const Home(),
+    return MaterialApp
+    (
+      routes: 
+      {
+        Splash.routeNamed: (_) => Splash(),
+        Home.routeNamed: (_) => Home(),
+        EditScreen.routeNamed: (_) => EditScreen()
       },
-      initialRoute: Home.route_named,
+      initialRoute: Splash.routeNamed,
     );
   }
 }

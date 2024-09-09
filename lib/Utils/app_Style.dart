@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kemo_todo_app_2/UI/Utils/app_color.dart';
+
+import 'app_color.dart';
 
 abstract class App_Style 
 {
-  //! Light Style
   static const TextStyle appBarStyle = TextStyle
   (
     fontSize: 30, 
@@ -46,10 +46,9 @@ abstract class App_Style
     color: App_Colors.black
   );
 
-  static TextStyle selectedCalenderDayStyle =
-    unselectedCalenderDayStyle.copyWith(color: App_Colors.primary);
+  static TextStyle selectedCalenderDayStyle = unselectedCalenderDayStyle.copyWith(color: App_Colors.primary);
 
-  //! Dark Style
+  ///Dark Style
   static const TextStyle appBarDarkStyle = TextStyle
   (
     fontSize: 30, 

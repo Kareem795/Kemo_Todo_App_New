@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:kemo_todo_app_2/UI/Utils/app_color.dart';
-abstract class App_Theme 
+
+import 'app_color.dart';
+
+abstract class AppTheme 
 {
+  //! Light mode colors
   static ThemeData light = ThemeData
   (
-    //! Light Style
-    
     useMaterial3: false,
     scaffoldBackgroundColor: App_Colors.bgColor,
     canvasColor: App_Colors.White,
     colorScheme: ColorScheme.fromSeed
     (
-        seedColor: App_Colors.primary,
-        primary: App_Colors.primary,
-        secondary: App_Colors.White,
-        onPrimary: App_Colors.White
+      seedColor: App_Colors.primary,
+      primary: App_Colors.primary,
+      secondary: App_Colors.White,
+      onPrimary: App_Colors.White,
     ),
 
     appBarTheme: const AppBarTheme
     (
         backgroundColor: App_Colors.primary, 
-        centerTitle: true,
+        centerTitle: true, 
         elevation: 0
     ),
 
@@ -28,15 +29,15 @@ abstract class App_Theme
     (
       backgroundColor: App_Colors.White,
       selectedItemColor: App_Colors.primary,
-      unselectedItemColor: Colors.grey,
+      unselectedItemColor: App_Colors.grey,
       selectedIconTheme: IconThemeData(size: 33),
-      unselectedIconTheme: IconThemeData(size: 33, color: App_Colors.grey),
-    )
+      unselectedIconTheme: IconThemeData(size: 33, color: App_Colors.grey)
+    ),
   );
 
-  //! Dark mode
 
-  static ThemeData Dark = ThemeData
+  //! Dark mode colors
+  static ThemeData dark = ThemeData
   (
     useMaterial3: false,
     scaffoldBackgroundColor: App_Colors.bgDark,
@@ -46,21 +47,19 @@ abstract class App_Theme
       seedColor: App_Colors.primary,
       primary: App_Colors.primary,
       secondary: App_Colors.black,
-      onPrimary: App_Colors.black
+      onPrimary: App_Colors.black,
     ),
 
     appBarTheme: const AppBarTheme
     (
-      backgroundColor: App_Colors.primary,
-      centerTitle: true,
-      elevation: 0,
+      backgroundColor: App_Colors.primary, centerTitle: true
     ),
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData
     (
       backgroundColor: App_Colors.black,
       selectedItemColor: App_Colors.primary,
-      unselectedItemColor: Colors.white
-    )
+      unselectedItemColor: Colors.white,
+    ),
   );
 }
